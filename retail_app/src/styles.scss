@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "common"; // Path to your common.scss file
+
+body {
+  font-size: $font-xlm;
+  line-height: $line-m;
+}
+
+.section {
+  margin-bottom: $gutter-md;
+  padding: $gutter-sm $gutter-md;
+}
+
+// Your other global styles
+
+.example-class {
+  @include mobile {
+    // Styles for mobile view
+    background-color: red;
+  }
+
+  @include tablet {
+    // Styles for tablet view
+    background-color: blue;
+  }
+
+  @include desktop {
+    // Styles for desktop view
+    background-color: green;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
