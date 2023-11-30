@@ -1,30 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchmoduleComponent } from './components/searchmodule/searchmodule.component';
-import { WrapercomponentComponent } from './components/wrapercomponent/wrapercomponent.component';
-import { SidebarComponent } from './components/wrapercomponent/sidebar/sidebar.component';
-import { SearchbarComponent } from './components/wrapercomponent/searchbar/searchbar.component';
-import { SortbarComponent } from './components/wrapercomponent/sortbar/sortbar.component';
-import { ProductitemscomponentComponent } from './components/wrapercomponent/productitemscomponent/productitemscomponent.component';
-import { ProductcomponentComponent } from './components/wrapercomponent/productitemscomponent/productcomponent/productcomponent.component';
-import { StarfilterComponent } from './components/wrapercomponent/sidebar/starfilter/starfilter.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import { HomeComponent } from './components/Home/Home.component';
+import { SidebarComponent } from './components/Home/sidebar/sidebar.component';
+import { SearchbarComponent } from './components/Home/searchbar/searchbar.component';
+import { SortbarComponent } from './components/Home/sortbar/sortbar.component';
+import {ProductitemsComponent} from './components/Home/productitemscomponent/productitems.component';
+import { ProductComponent } from './components/Home/productitemscomponent/product/product.component';
+import { StarfilterComponent } from './components/Home/sidebar/starfilter/starfilter.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {AsyncPipe} from '@angular/common';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchmoduleComponent,
-    WrapercomponentComponent,
+    HomeComponent,
     SidebarComponent,
     SearchbarComponent,
     SortbarComponent,
-    ProductitemscomponentComponent,
-    ProductcomponentComponent,
+    ProductitemsComponent,
+    ProductComponent,
     StarfilterComponent,
   ],
   imports: [
@@ -32,7 +37,14 @@ import {HttpClientModule} from '@angular/common/http'
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    AsyncPipe,
+    MatIconModule
+    
 
   ],
   providers: [],
