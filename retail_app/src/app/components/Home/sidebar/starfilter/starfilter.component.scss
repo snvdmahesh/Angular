@@ -1,0 +1,27 @@
+.rating-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .rating-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .star {
+    color: gold;
+    font-size: 20px;
+  }
+  
+.rating-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+  }
+  
+  .rating-btn:hover {
+    color: gold;
+  }
+  

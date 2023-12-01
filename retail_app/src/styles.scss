@@ -1,3 +1,6 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
 @import "common"; // Path to your common.scss file
 
 body {
@@ -29,5 +32,3 @@ body {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
