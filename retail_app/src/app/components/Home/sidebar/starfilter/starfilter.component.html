@@ -1,8 +1,34 @@
-<h2>Ratings</h2>
+<h2>Rating</h2>
 <ul class="rating-list">
-  <button class="rating-btn">&#9733; &#9733; &#9733; &#9733; &#9733;</button>
-  <button class="rating-btn">&#9733; &#9733; &#9733; &#9733; &#9734;</button>
-  <button class="rating-btn">&#9733; &#9733; &#9733; &#9734; &#9734;</button>
-  <button class="rating-btn">&#9733; &#9733; &#9734; &#9734; &#9734;</button>
-  <button class="rating-btn">&#9733; &#9734; &#9734; &#9734; &#9734;</button>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(undefined)">
+      All
+    </button>
+  </li>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(5)">
+      &#9733; &#9733; &#9733; &#9733; &#9733;
+    </button>
+  </li>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(4)">
+      &#9733; &#9733; &#9733; &#9733; &#9734;
+    </button>
+  </li>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(3)">
+      &#9733; &#9733; &#9733; &#9734; &#9734;
+    </button>
+  </li>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(2)">
+      &#9733; &#9733; &#9734; &#9734; &#9734;
+    </button>
+  </li>
+  <li>
+    <button class="rating-btn" (click)="selectStarRating(1)">
+      &#9733; &#9734; &#9734; &#9734; &#9734;
+    </button>
+  </li>
+  
 </ul>

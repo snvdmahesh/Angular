@@ -1,0 +1,18 @@
+/* product-card.css */
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    /* Other image styles */
+  }
+
+
+  .truncated {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limiting to 1 line */
+    -webkit-box-orient: vertical;
+  }
+  
+  

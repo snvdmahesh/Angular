@@ -5,9 +5,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductsService {
+  rating?: number | undefined
 
-  constructor(private http:HttpClient) {}
-  fetchedProducts(){
+  constructor(private http: HttpClient) { }
+  setRating(rate: number | undefined) {
+    this.rating = rate
+  }
+  getRating() {
+    return this.rating
+  }
+  fetchedProducts() {
     return this.http.get('http://localhost:3000/merchandise')
   }
+
 }

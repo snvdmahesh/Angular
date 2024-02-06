@@ -2,8 +2,9 @@ export interface Product {
     id: number;
     title: string;
     description: string;
-    star_rating: number;
+    rating: number;
     status: string;
     price: number;
+    image: string;
   }
   

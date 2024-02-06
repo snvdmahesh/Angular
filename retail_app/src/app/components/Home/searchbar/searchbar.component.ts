@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/components/Home/product.interface';
 
@@ -12,17 +11,18 @@ import { Product } from 'src/app/components/Home/product.interface';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
-  constructor(private productservices: ProductsService) {}
+  @Output() searchClicked: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(private productService: ProductsService) {}
 
   myControl = new FormControl('');
   filteredOptions?: Observable<string[]>;
-
-  products: Product[] = []; // Assuming this holds fetched products
-
+  products: Product[] = [];
+//auto fill extention
   ngOnInit(): void {
-    this.productservices.fetchedProducts().subscribe(
+    this.productService.fetchedProducts().subscribe(
       (data: any) => {
-        this.products = data as Product[]; // Assuming the service response is an array of products
+        this.products = data as Product[];
         this.filteredOptions = this.myControl.valueChanges.pipe(
           startWith(''),
           map(value => this._filter(value || ''))
@@ -33,13 +33,19 @@ export class SearchbarComponent implements OnInit {
       }
     );
   }
-  
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.products
-      .filter(product => product.title.toLowerCase().includes(filterValue)) // Assuming 'name' is the property containing the product name
+      .filter(product => product.title.toLowerCase().includes(filterValue))
       .map(product => product.title);
   }
+
+  onSearchClick(): void {
+    const searchValue = this.myControl.value || ''; // Default to an empty string if null
+    this.searchClicked.emit(searchValue);
+
+    this.myControl.setValue('');
+  }
 }
+
