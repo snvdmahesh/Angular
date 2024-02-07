@@ -1,11 +1,19 @@
-
 <div class="card mb-4">
-  <!-- <img [src]="product?.imageURL" class="card-img-top" alt="Product Image"> -->
+  <img [src]="product?.image" class="card-img-top" alt="Product Image">
   <div class="card-body">
     <h5 class="card-title">{{ product?.title }}</h5>
-    <p class="card-text">{{ product?.description }}</p>
+    <p class="card-text" [ngClass]="{'truncated': !showFullDescription}">
+      {{ product?.description }}
+    </p>
+    <button *ngIf="!showFullDescription" (click)="showFullDescription = true" class="btn btn-link">
+      More
+    </button>
+    <button *ngIf="showFullDescription" (click)="showFullDescription = false" class="btn btn-link">
+      Less
+    </button>
     <p class="card-text">Price: ${{ product?.price }}</p>
     <p class="card-text">Status: {{ product?.status }}</p>
-    <p class="card-text">star_rating: {{ product?.star_rating }}</p>
+    <p class="card-text">Star rating: {{ product?.rating}}</p>
   </div>
 </div>
+

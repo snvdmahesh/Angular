@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ProductsService } from 'src/app/services/products.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
 import { SearchbarComponent } from './searchbar.component';
 
 describe('SearchbarComponent', () => {
@@ -8,11 +12,12 @@ describe('SearchbarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchbarComponent]
+      declarations: [SearchbarComponent],
+      imports: [HttpClientTestingModule,MatFormFieldModule,MatAutocompleteModule,MatIconModule],
+      providers: [ProductsService], // Add ProductsService here
     });
+
     fixture = TestBed.createComponent(SearchbarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

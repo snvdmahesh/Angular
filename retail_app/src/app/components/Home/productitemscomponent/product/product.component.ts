@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/components/Home/product.interface';
 
@@ -8,6 +8,12 @@ import { Product } from 'src/app/components/Home/product.interface';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent{
+export class ProductComponent implements OnInit{
   @Input() product: Product | undefined;
+  showFullDescription: boolean = false;
+  ngOnInit(): void {
+    // console.log(this.product)
+    
+  }
+  
 }

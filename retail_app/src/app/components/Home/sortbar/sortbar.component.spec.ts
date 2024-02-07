@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SortbarComponent } from './sortbar.component';
 
 describe('SortbarComponent', () => {
